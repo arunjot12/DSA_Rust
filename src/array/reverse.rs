@@ -1,39 +1,18 @@
-//! Reverse an array
+/// Reverses an array by copying elements in reverse order
+#[allow(unused)]
+pub fn reverse_array() {
+    let a = [1, 2, 3, 4, 5];
+    let size_of_a = a.len();
+    let mut last_index = size_of_a;
 
-/// Reverses the given array and returns a new Vec
-///
-/// # Examples
-/// ```
-/// use dsa::array::reverse::reverse_array;
-/// assert_eq!(reverse_array(&[1, 2, 3, 4, 5]), vec![5, 4, 3, 2, 1]);
-/// ```
-pub fn reverse_array(arr: &[i32]) -> Vec<i32> {
-    arr.iter().rev().copied().collect()
-}
+    println!("size of a {}", size_of_a);
 
-/// Reverses the array in place
-pub fn reverse_in_place(arr: &mut [i32]) {
-    arr.reverse();
-}
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn test_reverse() {
-        assert_eq!(reverse_array(&[1, 2, 3, 4, 5]), vec![5, 4, 3, 2, 1]);
+    // Create new array and fill from end to start
+    let mut b = [0; 5];
+    for i in a {
+        last_index = last_index - 1;
+        b[last_index] = i;
     }
 
-    #[test]
-    fn test_reverse_in_place() {
-        let mut arr = [1, 2, 3, 4, 5];
-        reverse_in_place(&mut arr);
-        assert_eq!(arr, [5, 4, 3, 2, 1]);
-    }
-
-    #[test]
-    fn test_reverse_empty() {
-        assert_eq!(reverse_array(&[]), Vec::<i32>::new());
-    }
+    println!("B is {:?}", b);
 }

@@ -1,34 +1,34 @@
 //! DSA - Data Structures and Algorithms in Rust
-//!
-//! A collection of common data structures and algorithms implemented in Rust
-//! for learning purposes.
 
-pub mod array;
-pub mod linked_list;
+use std::io::{self, Write};
+
+mod array;
+mod linked_list;
 
 fn main() {
     println!("=== DSA in Rust ===\n");
+    println!("Choose a program to run:");
+    println!("  1. Check if array is sorted");
+    println!("  2. Count even numbers");
+    println!("  3. Reverse array");
+    println!("  4. Linked list demo");
+    println!("  0. Exit\n");
 
-    // Array examples
-    println!("📦 Array Operations:");
-    
-    let arr = [1, 2, 3, 4, 5];
-    println!("  Original array: {:?}", arr);
-    println!("  Is sorted: {}", array::is_sorted(&arr));
-    println!("  Even count: {}", array::count_even_numbers(&arr));
-    println!("  Reversed: {:?}", array::reverse_array(&arr));
+    print!("Enter your choice: ");
+    io::stdout().flush().unwrap();
 
-    let unsorted = [5, 2, 8, 1, 9];
-    println!("\n  Unsorted array: {:?}", unsorted);
-    println!("  Is sorted: {}", array::is_sorted(&unsorted));
+    let mut input = String::new();
+    io::stdin().read_line(&mut input).unwrap();
 
-    // Linked list example
-    println!("\n🔗 Linked List:");
-    let mut list = linked_list::LinkedList::new(1);
-    list.append(2);
-    list.append(3);
-    println!("  Created linked list: 1 -> 2 -> 3");
-    println!("  Head data: {}", list.data());
-
-    println!("\n✅ All demos completed!");
+    match input.trim() {
+        "1" => array::sorted_array(),
+        "2" => array::count_even_numbers(),
+        "3" => array::reverse_array(),
+        "4" => {
+            println!("Linked list - add_two_numbers (TODO)");
+            linked_list::add_two_numbers(None, None);
+        }
+        "0" => println!("Goodbye!"),
+        _ => println!("Invalid choice!"),
+    }
 }

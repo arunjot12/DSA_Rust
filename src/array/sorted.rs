@@ -1,44 +1,18 @@
-//! Check if an array is sorted
+/// Checks if an array is sorted in ascending order
+pub fn sorted_array() {
+    let a = [1, 2, 111, 7, 8, 10, 12];
+    let mut first_array = a[0];
+    let mut condition = true;
 
-/// Checks if the given array is sorted in ascending order
-///
-/// # Examples
-/// ```
-/// use dsa::array::sorted::is_sorted;
-/// assert!(is_sorted(&[1, 2, 3, 4, 5]));
-/// assert!(!is_sorted(&[1, 3, 2, 4, 5]));
-/// ```
-pub fn is_sorted(arr: &[i32]) -> bool {
-    if arr.is_empty() {
-        return true;
-    }
-    
-    let mut prev = arr[0];
-    for &item in arr.iter().skip(1) {
-        if item < prev {
-            return false;
-        }
-        prev = item;
-    }
-    true
-}
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn test_sorted_array() {
-        assert!(is_sorted(&[1, 2, 3, 4, 5]));
+    // Iterate through array and compare each element with previous
+    for i in a {
+        condition = if i >= first_array {
+            first_array = i;
+            true
+        } else {
+            false
+        };
     }
 
-    #[test]
-    fn test_unsorted_array() {
-        assert!(!is_sorted(&[1, 2, 111, 7, 8, 10, 12]));
-    }
-
-    #[test]
-    fn test_empty_array() {
-        assert!(is_sorted(&[]));
-    }
+    println!("Array is sorted {:?}", condition);
 }
