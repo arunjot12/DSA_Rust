@@ -1,5 +1,4 @@
 /// Checks if an array is sorted in ascending order
-#[allow(dead_code)]
 pub fn sorted_array() {
     let a = [1, 2, 111, 7, 8, 10, 12];
     let mut first_array = a[0];
