@@ -29,11 +29,12 @@ fn main() {
             "5" => array::run_reverse_demo(),
             "6" => array::run_sorted_demo(),
             "7" => leetcode::run_fizzbuzz_demo(),
-            "8" => {
+            "8" => leetcode::run_number_of_steps_demo(),
+            "9" => {
                 println!("👋 Goodbye!");
                 break;
             }
-            _ => println!("❌ Invalid option. Please choose 1-8."),
+            _ => println!("❌ Invalid option. Please choose 1-9."),
         }
         println!();
     }
@@ -50,7 +51,8 @@ fn print_menu() {
     println!("│  5. Reverse Array               │");
     println!("│  6. Check if Sorted             │");
     println!("│  7. FizzBuzz                    │");
-    println!("│  8. Exit                        │");
+    println!("│  8. Number of Steps to Zero     │");
+    println!("│  9. Exit                        │");
     println!("└─────────────────────────────────┘");
     print!("Enter your choice: ");
     io::stdout().flush().unwrap();

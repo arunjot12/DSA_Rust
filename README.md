@@ -11,13 +11,19 @@
 
 ```
 src/
-├── main.rs                        # Entry point
+├── main.rs                        # Entry point with interactive menu
 ├── array/                         # Array algorithms
 │   ├── mod.rs                     # Module exports
 │   ├── running_sum_of_1d_array.rs # Running sum algorithm
+│   ├── richest_wealth_customer.rs # Find richest customer
 │   ├── sorted.rs                  # Check if array is sorted
 │   ├── count_even.rs              # Count even numbers
+│   ├── linear_search.rs           # Linear search algorithm
 │   └── reverse.rs                 # Reverse array
+├── leetcode/                      # LeetCode solutions
+│   ├── mod.rs                     # Module exports
+│   ├── fizzbuzz.rs                # FizzBuzz problem
+│   └── number_of_steps_to_zero.rs # Number of steps to reduce to zero
 └── linked_list/                   # Linked list implementations
     └── mod.rs                     # LinkedList struct and methods
 ```
@@ -36,9 +42,28 @@ cargo run
 
 # Run tests
 cargo test
+```
 
-# Run tests with output
-cargo test -- --nocapture
+---
+
+## 🎮 Interactive Menu
+
+Run `cargo run` to launch the interactive menu:
+
+```
+┌─────────────────────────────────┐
+│        Select a Program         │
+├─────────────────────────────────┤
+│  1. Running Sum of 1D Array     │
+│  2. Richest Wealth Customer     │
+│  3. Count Even Numbers          │
+│  4. Linear Search               │
+│  5. Reverse Array               │
+│  6. Check if Sorted             │
+│  7. FizzBuzz                    │
+│  8. Number of Steps to Zero     │
+│  9. Exit                        │
+└─────────────────────────────────┘
 ```
 
 ---
@@ -50,9 +75,20 @@ cargo test -- --nocapture
 | Algorithm | File | Description |
 |-----------|------|-------------|
 | **Running Sum** | `running_sum_of_1d_array.rs` | Calculate running sum of 1D array |
+| **Richest Wealth** | `richest_wealth_customer.rs` | Find customer with maximum wealth |
 | **Sorted Check** | `sorted.rs` | Check if array is sorted in ascending order |
 | **Count Even** | `count_even.rs` | Count even numbers in array |
+| **Linear Search** | `linear_search.rs` | Search for element in array |
 | **Reverse** | `reverse.rs` | Reverse an array |
+
+### LeetCode Solutions
+
+| # | Problem | Solution |
+|---|---------|----------|
+| 412 | [FizzBuzz](https://leetcode.com/problems/fizz-buzz/) | [`fizzbuzz.rs`](src/leetcode/fizzbuzz.rs) |
+| 1342 | [Number of Steps to Reduce to Zero](https://leetcode.com/problems/number-of-steps-to-reduce-a-number-to-zero/) | [`number_of_steps_to_zero.rs`](src/leetcode/number_of_steps_to_zero.rs) |
+| 1480 | [Running Sum of 1D Array](https://leetcode.com/problems/running-sum-of-1d-array/) | [`running_sum_of_1d_array.rs`](src/array/running_sum_of_1d_array.rs) |
+| 1672 | [Richest Customer Wealth](https://leetcode.com/problems/richest-customer-wealth/) | [`richest_wealth_customer.rs`](src/array/richest_wealth_customer.rs) |
 
 ### Linked List
 
@@ -60,30 +96,6 @@ cargo test -- --nocapture
 |--------|-------------|
 | `LinkedList::new(data)` | Create a new linked list node |
 | `add_two_numbers(l1, l2)` | Add two numbers represented as linked lists |
-
----
-
-## 💡 Example
-
-```rust
-use dsa::array;
-
-fn main() {
-    let nums = vec![1, 2, 3, 4, 5];
-    let result = array::running_sum(nums);
-    
-    println!("{:?}", result);
-    // Output: [1, 3, 6, 10, 15]
-}
-```
-
----
-
-## 🎯 LeetCode Problems
-
-| # | Problem | Solution |
-|---|---------|----------|
-| 1480 | [Running Sum of 1D Array](https://leetcode.com/problems/running-sum-of-1d-array/) | [`running_sum_of_1d_array.rs`](src/array/running_sum_of_1d_array.rs) |
 
 ---
 
