@@ -4,6 +4,7 @@
 //! implemented in Rust for learning and practice.
 
 mod array;
+mod leetcode;
 mod linked_list;
 
 use std::io::{self, Write};
@@ -27,11 +28,12 @@ fn main() {
             "4" => array::run_linear_search_demo(),
             "5" => array::run_reverse_demo(),
             "6" => array::run_sorted_demo(),
-            "7" => {
+            "7" => leetcode::run_fizzbuzz_demo(),
+            "8" => {
                 println!("👋 Goodbye!");
                 break;
             }
-            _ => println!("❌ Invalid option. Please choose 1-7."),
+            _ => println!("❌ Invalid option. Please choose 1-8."),
         }
         println!();
     }
@@ -47,7 +49,8 @@ fn print_menu() {
     println!("│  4. Linear Search               │");
     println!("│  5. Reverse Array               │");
     println!("│  6. Check if Sorted             │");
-    println!("│  7. Exit                        │");
+    println!("│  7. FizzBuzz                    │");
+    println!("│  8. Exit                        │");
     println!("└─────────────────────────────────┘");
     print!("Enter your choice: ");
     io::stdout().flush().unwrap();
