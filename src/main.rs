@@ -13,15 +13,15 @@ fn main() {
     println!();
 
     // Running Sum of 1D Array
-    println!("📌 Running Sum of 1D Array");
+    // println!("📌 Running Sum of 1D Array");
     println!("───────────────────────────");
 
     let nums = vec![1, 2, 3, 4, 5];
     let nums_2 = vec![9, 3, 5, 642, 12];
-    println!("   Input:       {:?}", nums);
+    // println!("   Input:       {:?}", nums);
 
     let result = array::richest_wealth_customer(vec![nums, nums_2]);
-    println!("   Running Sum: {:?}", result);
+    println!("   Richest Person is Sum: {:?}", result);
 
     println!();
     println!("✅ Done!");
