@@ -13,16 +13,6 @@
 //! Explanation: Running sum is [1, 1+2, 1+2+3, 1+2+3+4]
 //! ```
 
-/// Returns the running sum of the input array.
-///
-/// # Arguments
-/// * `nums` - A vector of integers
-///
-/// # Returns
-/// * A vector where each element is the cumulative sum up to that index
-///
-/// # Time Complexity: O(n)
-/// # Space Complexity: O(n)
 pub fn running_sum(nums: Vec<i32>) -> Vec<i32> {
     let mut running_sum = 0;
     let mut result = Vec::with_capacity(nums.len());
