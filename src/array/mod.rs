@@ -6,6 +6,7 @@ pub mod reverse;
 pub mod richest_wealth_customer;
 pub mod running_sum_of_1d_array;
 pub mod sorted;
+pub mod sum_consecutive_number;
 
 // Re-export functions for easy access
 pub use count_even::Solution as CountEvenSolution;
@@ -14,6 +15,7 @@ pub use reverse::Solution as ReverseSolution;
 pub use richest_wealth_customer::richest_wealth_customer;
 pub use running_sum_of_1d_array::running_sum;
 pub use sorted::sorted_array;
+pub use sum_consecutive_number::{sum_consecutive_brute_force, sum_consecutive_sliding_window};
 
 /// Demo: Running Sum of 1D Array
 pub fn run_running_sum_demo() {
@@ -76,4 +78,12 @@ pub fn run_sorted_demo() {
     println!("📌 Check if Array is Sorted");
     println!("───────────────────────────");
     sorted_array();
+}
+
+/// Demo: Sum Consecutive Numbers
+pub fn run_sum_consecutive_demo() {
+    println!("📌 Sum Consecutive Numbers");
+    println!("──────────────────────────");
+    sum_consecutive_brute_force();
+    sum_consecutive_sliding_window();
 }

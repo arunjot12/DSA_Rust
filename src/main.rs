@@ -28,13 +28,14 @@ fn main() {
             "4" => array::run_linear_search_demo(),
             "5" => array::run_reverse_demo(),
             "6" => array::run_sorted_demo(),
-            "7" => leetcode::run_fizzbuzz_demo(),
-            "8" => {leetcode::leetcode_longest_substring(); break},
-            "9" => {
+            "7" => array::run_sum_consecutive_demo(),
+            "8" => leetcode::run_fizzbuzz_demo(),
+            "9" => {leetcode::leetcode_longest_substring(); break},
+            "10" => {
                 println!("👋 Goodbye!");
                 break;
             }
-            _ => println!("❌ Invalid option. Please choose 1-9."),
+            _ => println!("❌ Invalid option. Please choose 1-10."),
         }
         println!();
     }
@@ -50,9 +51,10 @@ fn print_menu() {
     println!("│  4. Linear Search               │");
     println!("│  5. Reverse Array               │");
     println!("│  6. Check if Sorted             │");
-    println!("│  7. FizzBuzz                    │");
-    println!("│  8. Longest Substring LeetCode  │");
-    println!("│  9. Exit                        │");
+    println!("│  7. Sum Consecutive Numbers     │");
+    println!("│  8. FizzBuzz                    │");
+    println!("│  9. Longest Substring LeetCode  │");
+    println!("│ 10. Exit                        │");
     println!("└─────────────────────────────────┘");
     print!("Enter your choice: ");
     io::stdout().flush().unwrap();
