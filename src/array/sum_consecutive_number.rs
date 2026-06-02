@@ -10,3 +10,20 @@ fn main() {
      i+=1;
    }
 }
+
+// Sliding Window
+
+// Online Rust compiler to run Rust program online
+// Print "Start small. Ship something." message
+
+fn main() {
+   let arr = [1,2,3,4,5,6];
+   let mut i = 1;
+   let mut sum = arr[0] + arr[1] + arr[2];
+   
+   while i <= 3 {
+       sum = sum - arr[i-1] + arr[2+i];
+       i+=1;
+   }
+   
+}
