@@ -1,24 +1,18 @@
 pub fn longest_substring(s: String) -> i32 {
-    let mut temp = 1;
-    let mut earlier_temp = 0;
-
-    println!("Input String: {}\n", s);
+    let mut prefix = String::from("");
+    let mut first = s.chars().nth(0).unwrap();
 
     for (outer_index, main_char) in s.chars().enumerate() {
-        println!("==========================");
-        println!("Outer Loop: main_char = {}", main_char);
-
-        for other_char in s.chars().skip(outer_index + 1) {
-            println!(
-                "Comparing main_char '{}' with other_char '{}'",
-                main_char, other_char
-
-            );
-
-            if other_char != main_char {
-                temp += 1;
-                println!("Characters are different");
-                println!("temp increased to {}", temp);
+        for inner_char in s.chars().skip(outer_index + 1) {
+            if inner_char != main_char {
+                let combine = first.to_string() + &main_char.to_string();
+                let a = &combine[0..combine.len()];
+                if prefix.contains(a) {
+                    continue;
+                } else {
+                    prefix = prefix + &combine;
+                    first = inner_char;
+                }
             } else {
                 println!("Characters are same");
                 break;
@@ -26,21 +20,7 @@ pub fn longest_substring(s: String) -> i32 {
 
             println!("--------------------------");
         }
-
-          if temp >= earlier_temp {
-                println!(
-                    "temp ({}) >= earlier_temp ({})",
-                    temp, earlier_temp
-                );
-                earlier_temp = temp;
-
-                println!("earlier_temp updated to {}", earlier_temp);
-            }
-               temp = 0;
-
     }
 
-    println!("\nFinal earlier_temp = {}", earlier_temp);
-
-    earlier_temp
+    prefix.len() as i32
 }

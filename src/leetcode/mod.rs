@@ -2,13 +2,13 @@
 
 pub mod fizzbuzz;
 pub mod longest_substring;
-pub mod two_sum;
 pub mod number_of_steps_to_zero;
+pub mod two_sum;
 
 pub use fizzbuzz::fizz_buzz;
+pub use longest_substring::longest_substring;
 pub use number_of_steps_to_zero::number_of_steps;
 pub use two_sum::two_sum;
-pub use longest_substring::longest_substring;
 
 /// Demo: FizzBuzz
 pub fn run_fizzbuzz_demo() {
@@ -31,14 +31,14 @@ pub fn run_number_of_steps_demo() {
 }
 
 pub fn leetcode_two_sum() {
-    let data = vec![3,2,4];
+    let data = vec![3, 2, 4];
     let target = 6;
     let index = two_sum(data, target);
-    println!("The indexes of both numbers are {:?}",index);
+    println!("The indexes of both numbers are {:?}", index);
 }
 
-pub fn leetcode_longest_substring(){
-    let string = "arunjot";
+pub fn leetcode_longest_substring() {
+    let string = "abcda";
     let total = longest_substring(string.to_string());
-    println!("The total of String is {:?}",total);
+    println!("The total of String is {:?}", total);
 }
