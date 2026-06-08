@@ -29,7 +29,7 @@ fn main() {
             "5" => array::run_reverse_demo(),
             "6" => array::run_sorted_demo(),
             "7" => array::run_sum_consecutive_demo(),
-            "8" => leetcode::run_fizzbuzz_demo(),
+            "8" => {leetcode::leetcode_valid_parenthesis(); break}
             "9" => {leetcode::leetcode_longest_substring(); break},
             "10" => {
                 println!("👋 Goodbye!");
@@ -52,7 +52,7 @@ fn print_menu() {
     println!("│  5. Reverse Array               │");
     println!("│  6. Check if Sorted             │");
     println!("│  7. Sum Consecutive Numbers     │");
-    println!("│  8. FizzBuzz                    │");
+    println!("│  8. Valid Parenthesis           │");
     println!("│  9. Longest Substring LeetCode  │");
     println!("│ 10. Exit                        │");
     println!("└─────────────────────────────────┘");

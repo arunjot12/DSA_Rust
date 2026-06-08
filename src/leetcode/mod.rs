@@ -4,11 +4,13 @@ pub mod fizzbuzz;
 pub mod longest_substring;
 pub mod number_of_steps_to_zero;
 pub mod two_sum;
+pub mod valid_parenthesis;
 
 pub use fizzbuzz::fizz_buzz;
 pub use longest_substring::longest_substring;
 pub use number_of_steps_to_zero::number_of_steps;
 pub use two_sum::two_sum;
+pub use valid_parenthesis::valid_parenthesis;
 
 /// Demo: FizzBuzz
 pub fn run_fizzbuzz_demo() {
@@ -41,4 +43,10 @@ pub fn leetcode_longest_substring() {
     let string = "abcda";
     let total = longest_substring(string.to_string());
     println!("The total of String is {:?}", total);
+}
+
+pub fn leetcode_valid_parenthesis(){
+    let string = "([)]";
+    let condition = valid_parenthesis(string.to_string());
+    println!("The condition is {:?}",condition);
 }
