@@ -77,13 +77,21 @@ pub fn run_reverse_demo() {
 pub fn run_sorted_demo() {
     println!("📌 Check if Array is Sorted");
     println!("───────────────────────────");
-    sorted_array();
+    let arr1 = [1, 2, 7, 8, 10, 12];
+    let arr2 = [1, 2, 111, 7, 8];
+    println!("   Input 1: {:?}", arr1);
+    println!("   Is sorted? {}", sorted_array(&arr1));
+    println!("   Input 2: {:?}", arr2);
+    println!("   Is sorted? {}", sorted_array(&arr2));
 }
 
 /// Demo: Sum Consecutive Numbers
 pub fn run_sum_consecutive_demo() {
     println!("📌 Sum Consecutive Numbers");
     println!("──────────────────────────");
-    sum_consecutive_brute_force();
-    sum_consecutive_sliding_window();
+    let arr = [1, 2, 3, 4, 5, 6];
+    let window = 3;
+    println!("   Input: {:?}, window = {}", arr, window);
+    sum_consecutive_brute_force(&arr, window);
+    sum_consecutive_sliding_window(&arr, window);
 }

@@ -29,33 +29,45 @@ fn main() {
             "5" => array::run_reverse_demo(),
             "6" => array::run_sorted_demo(),
             "7" => array::run_sum_consecutive_demo(),
-            "8" => {leetcode::leetcode_valid_parenthesis(); break}
-            "9" => {leetcode::leetcode_longest_substring(); break},
-            "10" => {
+            "8" => leetcode::run_fizzbuzz_demo(),
+            "9" => leetcode::run_number_of_steps_demo(),
+            "10" => leetcode::run_two_sum_demo(),
+            "11" => leetcode::run_longest_substring_demo(),
+            "12" => leetcode::run_valid_parenthesis_demo(),
+            "13" => leetcode::run_remove_duplicates_demo(),
+            "0" => {
                 println!("👋 Goodbye!");
                 break;
             }
-            _ => println!("❌ Invalid option. Please choose 1-10."),
+            _ => println!("❌ Invalid option. Please choose 0-13."),
         }
         println!();
     }
 }
 
 fn print_menu() {
-    println!("┌─────────────────────────────────┐");
-    println!("│        Select a Program         │");
-    println!("├─────────────────────────────────┤");
-    println!("│  1. Running Sum of 1D Array     │");
-    println!("│  2. Richest Wealth Customer     │");
-    println!("│  3. Count Even Numbers          │");
-    println!("│  4. Linear Search               │");
-    println!("│  5. Reverse Array               │");
-    println!("│  6. Check if Sorted             │");
-    println!("│  7. Sum Consecutive Numbers     │");
-    println!("│  8. Valid Parenthesis           │");
-    println!("│  9. Longest Substring LeetCode  │");
-    println!("│ 10. Exit                        │");
-    println!("└─────────────────────────────────┘");
+    println!("┌─────────────────────────────────────────┐");
+    println!("│            Select a Program             │");
+    println!("├─────────────────────────────────────────┤");
+    println!("│ ARRAY ALGORITHMS                        │");
+    println!("│  1. Running Sum of 1D Array             │");
+    println!("│  2. Richest Wealth Customer             │");
+    println!("│  3. Count Even Numbers                  │");
+    println!("│  4. Linear Search                       │");
+    println!("│  5. Reverse Array                       │");
+    println!("│  6. Check if Sorted                     │");
+    println!("│  7. Sum Consecutive Numbers             │");
+    println!("├─────────────────────────────────────────┤");
+    println!("│ LEETCODE PROBLEMS                       │");
+    println!("│  8. FizzBuzz                            │");
+    println!("│  9. Number of Steps to Zero             │");
+    println!("│ 10. Two Sum                             │");
+    println!("│ 11. Longest Substring Without Repeating │");
+    println!("│ 12. Valid Parentheses                   │");
+    println!("│ 13. Remove Duplicates from Sorted Array │");
+    println!("├─────────────────────────────────────────┤");
+    println!("│  0. Exit                                │");
+    println!("└─────────────────────────────────────────┘");
     print!("Enter your choice: ");
     io::stdout().flush().unwrap();
 }

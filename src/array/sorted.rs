@@ -1,18 +1,15 @@
 /// Checks if an array is sorted in ascending order
-pub fn sorted_array() {
-    let a = [1, 2, 111, 7, 8, 10, 12];
-    let mut first_array = a[0];
-    let mut condition = true;
-
-    // Iterate through array and compare each element with previous
-    for i in a {
-        condition = if i >= first_array {
-            first_array = i;
-            true
-        } else {
-            false
-        };
+pub fn sorted_array(arr: &[i32]) -> bool {
+    if arr.is_empty() {
+        return true;
     }
-
-    println!("Array is sorted {:?}", condition);
+    
+    let mut prev = arr[0];
+    for &item in arr.iter().skip(1) {
+        if item < prev {
+            return false;
+        }
+        prev = item;
+    }
+    true
 }
