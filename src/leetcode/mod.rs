@@ -2,12 +2,14 @@
 
 pub mod fizzbuzz;
 pub mod longest_substring;
+pub mod remove_element;
 pub mod number_of_steps_to_zero;
 pub mod remove_duplicay_array;
 pub mod two_sum;
 pub mod valid_parenthesis;
 
 pub use fizzbuzz::fizz_buzz;
+pub use remove_element::*;
 pub use longest_substring::longest_substring;
 pub use number_of_steps_to_zero::number_of_steps;
 pub use remove_duplicay_array::Solution as RemoveDuplicatesSolution;
@@ -75,3 +77,12 @@ pub fn run_remove_duplicates_demo() {
     println!("   Output Length: {}", result);
     // Note: The modified array prints are handled inside the function by your code!
 }
+
+pub fn run_remove_element(){
+   let mut number = vec![0,1,2,2,3,0,4,2];
+   let element = 2;
+   
+   let removed_element =  remove_element(&mut number,element);
+   println!("Removed element {:?}",removed_element);
+   println!("Number is {:?}",number)
+}   

@@ -34,7 +34,8 @@ fn main() {
             "10" => leetcode::run_two_sum_demo(),
             "11" => leetcode::run_longest_substring_demo(),
             "12" => leetcode::run_valid_parenthesis_demo(),
-            "13" => leetcode::run_remove_duplicates_demo(),
+            "13" => leetcode::run_remove_element(),
+            "14" => {leetcode::run_remove_element(); break},
             "0" => {
                 println!("👋 Goodbye!");
                 break;
@@ -65,6 +66,7 @@ fn print_menu() {
     println!("│ 11. Longest Substring Without Repeating │");
     println!("│ 12. Valid Parentheses                   │");
     println!("│ 13. Remove Duplicates from Sorted Array │");
+    println!("│ 14. Remove Element from Array │");
     println!("├─────────────────────────────────────────┤");
     println!("│  0. Exit                                │");
     println!("└─────────────────────────────────────────┘");
